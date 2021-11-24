@@ -1,7 +1,7 @@
 <SQLFeatureStore xmlns="http://www.deegree.org/datasource/feature/sql" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:app="http://skjema.geonorge.no/SOSI/produktspesifikasjon/Reguleringsplan/20190401" xsi:schemaLocation="http://www.deegree.org/datasource/feature/sql http://schemas.deegree.org/datasource/feature/sql/3.1.0/sql.xsd" configVersion="3.1.0">
 	<JDBCConnId>regplan452</JDBCConnId>
 	<StorageCRS dim="2D" srid="25832">EPSG:25832</StorageCRS>
-	<GMLSchema>http://skjema.geonorge.no/SOSI/produktspesifikasjon/Reguleringsplan/20190401/reguleringsplan_20190401.xsd</GMLSchema>
+	<GMLSchema>http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/Reguleringsplanforslag/5.0/reguleringsplanforslag-5.0_rev20210827.xsd</GMLSchema>
 	
 	<!-- For Reguleringsplan 4.52 oppdatert 20191203-Leg -->
 	<!-- Nytt i 4.52 PblMidlByggAnleggGrense og PblMidlByggAnleggOmråde -->
