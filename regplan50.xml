@@ -160,7 +160,7 @@
 		<Primitive path="app:eierform" mapping="EIERFORM" />
 		<Primitive path="app:arealformål" mapping="RPAREALFORMÅL" />
 		<Primitive path="app:beskrivelse" mapping="BESKRIVELSE" />
-		<Primitive path="app:feltbetegnelse" mapping="FELTNAVN" />
+		<Primitive path="app:feltnavn" mapping="FELTNAVN" />
 		<Complex path="app:utnytting">
 			<Complex path="app:RpUtnytting">
 				<Primitive path="app:utnyttingstype" mapping="UTNTYP" />
