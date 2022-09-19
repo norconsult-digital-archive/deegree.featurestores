@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurations>
 	<baseUrl>https://raw.githubusercontent.com/Norconsult/deegree.featurestores/FKB50/</baseUrl>
-	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/FKBBygning.xsd">FKB-Bygning50.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0">FKB-Bygning50.xml</configuration>
 	<configuration namespace="http://skjema.test.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0">FKB-BygnAnlegg50.xml</configuration>
 	<configuration namespace="http://skjema.test.geonorge.no/SOSI/produktspesifikasjon/FKB-Tiltak/5.0">FKB-Tiltak50.xml</configuration>
 </configurations>
