@@ -13,13 +13,6 @@
 				<Primitive path="app:versjonId" mapping="versjonid"/>
 			</Complex>
 		</Complex>
-		<Complex path="app:registreringsversjon">
-			<Complex path="app:Registreringsversjon">
-				<Primitive path="app:produkt" mapping="produkt"/>
-				<Primitive path="app:versjon" mapping="versjon"/>
-				<Primitive path="app:undertype" mapping="underversjon"/>
-			</Complex>
-		</Complex>
 		<Primitive path="app:oppdateringsdato" mapping="oppdateringsdato"/>
 		<Primitive path="app:sluttdato" mapping="sluttdato"/>
 		<Primitive path="app:datafangstdato" mapping="datafangstdato"/>
