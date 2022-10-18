@@ -1,8 +1,9 @@
-<SQLFeatureStore xmlns="http://www.deegree.org/datasource/feature/sql" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:app="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0" xsi:schemaLocation="http://www.deegree.org/datasource/feature/sql http://schemas.deegree.org/datasource/feature/sql/3.1.0/sql.xsd" configVersion="3.1.0">
+<?xml version="1.0" encoding="utf-8"?>
+<SQLFeatureStore xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:app="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.deegree.org/datasource/feature/sql http://schemas.deegree.org/datasource/feature/sql/3.1.0/sql.xsd" configVersion="3.1.0" xmlns="http://www.deegree.org/datasource/feature/sql">
   <JDBCConnId>sql</JDBCConnId>
-  <StorageCRS dim="3D" srid="5972">EPSG:5972</StorageCRS>
+  <StorageCRS srid="5972" dim="3D">EPSG:5972</StorageCRS>
   <GMLSchema>http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/FKBBygnAnlegg.xsd</GMLSchema>
-  <!--FeatureTypeMapping name="app:Bru" table="Bru">
+  <FeatureTypeMapping name="app:Bru" table="bru">
     <FIDMapping prefix="app.Bru_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -10,38 +11,34 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
+    <Primitive path="app:bruOverBru" mapping="bruoverbru" />
+    <Primitive path="app:brutrafikktype" mapping="brutrafikktype" />
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
+    <Primitive path="app:friseilingshøyde" mapping="friseilingshøyde" />
     <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
-    </Complex>
-    <Primitive path="app:bruOverBru" mapping="BRUOVERBRU" />
-    <Primitive path="app:brutrafikktype" mapping="BRUTRAFIKKTYPE" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Brudetalj" table="Brudetalj">
+  <FeatureTypeMapping name="app:Brudetalj" table="brudetalj">
     <FIDMapping prefix="app.Brudetalj_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -49,42 +46,29 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Kulvert" table="Kulvert">
+  <FeatureTypeMapping name="app:Kulvert" table="kulvert">
     <FIDMapping prefix="app.Kulvert_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -92,87 +76,61 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-  </FeatureTypeMapping-->
-  <FeatureTypeMapping name="app:Stikkrenne" table="Stikkrenne">
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:Stikkrenne" table="stikkrenne">
     <FIDMapping prefix="app.Stikkrenne_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
     <Complex path="app:identifikasjon">
       <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="LOKALID" />
-        <Primitive path="app:navnerom" mapping="NAVNEROM" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:registreringsversjon" mapping="REGISTRERINGSVERSJON" />
-    <!--Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex-->
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <!--Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" /-->
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:datafangstmetode" mapping="DATAFANGSTMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:datafangstmetodeHøyde" mapping="DATAFANGSTMETODEHØYDE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:nvdbpeker" mapping="NVDBPEKER" />
-    <!--Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex-->
+    <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
   </FeatureTypeMapping>
-  <!--FeatureTypeMapping name="app:Tunnelportal" table="Tunnelportal">
+  <FeatureTypeMapping name="app:Tunnelportal" table="tunnelportal">
     <FIDMapping prefix="app.Tunnelportal_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -180,177 +138,66 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:BautaStatue" table="BautaStatue">
-    <FIDMapping prefix="app.BautaStatue_">
+  <FeatureTypeMapping name="app:Avfallsbeholder" table="avfallsbeholder">
+    <FIDMapping prefix="app.Avfallsbeholder_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
     <Complex path="app:identifikasjon">
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
+    </Complex>
+    <Primitive path="app:medium" mapping="medium" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
+    <Complex path="app:posisjon">
+      <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
     <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
-    </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:BautaStatueGrense" table="BautaStatueGrense">
-    <FIDMapping prefix="app.BautaStatueGrense_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Bensinpumpe" table="Bensinpumpe">
-    <FIDMapping prefix="app.Bensinpumpe_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Brønn" table="Brønn">
+  <FeatureTypeMapping name="app:Brønn" table="brønn">
     <FIDMapping prefix="app.Brønn_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -358,46 +205,33 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
     <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
+      <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Flaggstang" table="Flaggstang">
+  <FeatureTypeMapping name="app:Flaggstang" table="flaggstang">
     <FIDMapping prefix="app.Flaggstang_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -405,135 +239,32 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:nrlpeker" mapping="nrlpeker" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:posisjon">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-    <Primitive path="app:medium" mapping="MEDIUM" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:FrittståendeTrapp" table="FrittståendeTrapp">
-    <FIDMapping prefix="app.FrittståendeTrapp_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
-    </Complex>
-    <Primitive path="app:medium" mapping="MEDIUM" />
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:FrittståendeTrappKant" table="FrittståendeTrappKant">
-    <FIDMapping prefix="app.FrittståendeTrappKant_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Primitive path="app:medium" mapping="MEDIUM" />
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Fundament" table="Fundament">
+  <FeatureTypeMapping name="app:Fundament" table="fundament">
     <FIDMapping prefix="app.Fundament_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -541,135 +272,30 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
-    </Complex>
-    <Primitive path="app:medium" mapping="MEDIUM" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:FundamentKant" table="FundamentKant">
-    <FIDMapping prefix="app.FundamentKant_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-    <Primitive path="app:medium" mapping="MEDIUM" />
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:KloakkrenseanleggGrense" table="KloakkrenseanleggGrense">
-    <FIDMapping prefix="app.KloakkrenseanleggGrense_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Pipe" table="Pipe">
+  <FeatureTypeMapping name="app:Pipe" table="pipe">
     <FIDMapping prefix="app.Pipe_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -677,134 +303,34 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
+    </Complex>
+    <Primitive path="app:nrlpeker" mapping="nrlpeker" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Complex path="app:posisjon">
+      <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
     <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
-    </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Pipekant" table="Pipekant">
-    <FIDMapping prefix="app.Pipekant_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Smørebukk" table="Smørebukk">
-    <FIDMapping prefix="app.Smørebukk_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Tank" table="Tank">
+  <FeatureTypeMapping name="app:Tank" table="tank">
     <FIDMapping prefix="app.Tank_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -812,46 +338,65 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
+    <Primitive path="app:nrlpeker" mapping="nrlpeker" />
+    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
+      <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
-    <Primitive path="app:medium" mapping="MEDIUM" />
+    <Complex path="app:område">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Tårn" table="Tårn">
+  <FeatureTypeMapping name="app:Trapp" table="trapp">
+    <FIDMapping prefix="app.Trapp_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:medium" mapping="medium" />
+    <Complex path="app:område">
+      <Geometry path="." mapping="geometri" />
+    </Complex>
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:Tårn" table="tårn">
     <FIDMapping prefix="app.Tårn_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -859,91 +404,68 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
+    <Primitive path="app:nrlpeker" mapping="nrlpeker" />
+    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
+      <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
-    <Primitive path="app:medium" mapping="MEDIUM" />
+    <Complex path="app:område">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:AnnetGjerde" table="AnnetGjerde">
-    <FIDMapping prefix="app.AnnetGjerde_">
+  <FeatureTypeMapping name="app:Gjerde" table="gjerde">
+    <FIDMapping prefix="app.Gjerde_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
     <Complex path="app:identifikasjon">
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
+    <Primitive path="app:gjerdetype" mapping="gjerdetype" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-    <Primitive path="app:medium" mapping="MEDIUM" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:MurFrittstående" table="MurFrittstående">
+  <FeatureTypeMapping name="app:MurFrittstående" table="murfrittstående">
     <FIDMapping prefix="app.MurFrittstående_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -951,44 +473,31 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-    <Primitive path="app:medium" mapping="MEDIUM" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:MurLoddrett" table="MurLoddrett">
+  <FeatureTypeMapping name="app:MurLoddrett" table="murloddrett">
     <FIDMapping prefix="app.MurLoddrett_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -996,44 +505,32 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-    <Primitive path="app:medium" mapping="MEDIUM" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Portstolpe" table="Portstolpe">
+  <FeatureTypeMapping name="app:Portstolpe" table="portstolpe">
     <FIDMapping prefix="app.Portstolpe_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -1041,43 +538,63 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:posisjon">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Skjerm" table="Skjerm">
+  <FeatureTypeMapping name="app:Ruin" table="ruin">
+    <FIDMapping prefix="app.Ruin_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
+    <Complex path="app:grense">
+      <Geometry path="." mapping="geometri" />
+    </Complex>
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:Skjerm" table="skjerm">
     <FIDMapping prefix="app.Skjerm_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -1085,46 +602,34 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
+    <Primitive path="app:skjermingsfunksjon" mapping="skjermingfunk" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
+    <Primitive path="app:høydeOverBakken" mapping="hob" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-    <Primitive path="app:skjermingsfunksjon" mapping="SKJERMINGFUNK" />
-    <Primitive path="app:høydeOverBakken" mapping="HOB" />
-    <Primitive path="app:medium" mapping="MEDIUM" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:SkråForstøtningsmur" table="SkråForstøtningsmur">
+  <FeatureTypeMapping name="app:SkråForstøtningsmur" table="skråforstøtningsmur">
     <FIDMapping prefix="app.SkråForstøtningsmur_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -1132,126 +637,31 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
+    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
-    </Complex>
-    <Primitive path="app:medium" mapping="MEDIUM" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Steingjerde" table="Steingjerde">
-    <FIDMapping prefix="app.Steingjerde_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:VeggFrittstående" table="VeggFrittstående">
-    <FIDMapping prefix="app.VeggFrittstående_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-    <Primitive path="app:medium" mapping="MEDIUM" />
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Voll" table="Voll">
+  <FeatureTypeMapping name="app:Voll" table="voll">
     <FIDMapping prefix="app.Voll_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -1259,89 +669,33 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
+    <Primitive path="app:skjermingsfunksjon" mapping="skjermingfunk" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:høydeOverBakken" mapping="hob" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-    <Primitive path="app:skjermingsfunksjon" mapping="SKJERMINGFUNK" />
-    <Primitive path="app:høydeOverBakken" mapping="HOB" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Gondolbane" table="Gondolbane">
-    <FIDMapping prefix="app.Gondolbane_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Hoppbakke" table="Hoppbakke">
+  <FeatureTypeMapping name="app:Hoppbakke" table="hoppbakke">
     <FIDMapping prefix="app.Hoppbakke_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -1349,43 +703,30 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Idrettsanlegg" table="Idrettsanlegg">
+  <FeatureTypeMapping name="app:Idrettsanlegg" table="idrettsanlegg">
     <FIDMapping prefix="app.Idrettsanlegg_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -1393,130 +734,67 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Sandkasse" table="Sandkasse">
-    <FIDMapping prefix="app.Sandkasse_">
+  <FeatureTypeMapping name="app:Parkdetalj" table="parkdetalj">
+    <FIDMapping prefix="app.Parkdetalj_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
     <Complex path="app:identifikasjon">
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:parkdetaljtype" mapping="parkdetaljtype" />
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
+    <Primitive path="app:medium" mapping="medium" />
+    <Complex path="app:posisjon">
+      <Geometry path="." mapping="reppunkt_spa" />
+    </Complex>
+    <Complex path="app:område">
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Skitrekk" table="Skitrekk">
-    <FIDMapping prefix="app.Skitrekk_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Skytebaneinnretning" table="Skytebaneinnretning">
+  <FeatureTypeMapping name="app:Skytebaneinnretning" table="skytebaneinnretning">
     <FIDMapping prefix="app.Skytebaneinnretning_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -1524,87 +802,30 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Stolheis" table="Stolheis">
-    <FIDMapping prefix="app.Stolheis_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Svømmebasseng" table="Svømmebasseng">
+  <FeatureTypeMapping name="app:Svømmebasseng" table="svømmebasseng">
     <FIDMapping prefix="app.Svømmebasseng_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -1612,37 +833,30 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
-    </Complex>
-    <Primitive path="app:medium" mapping="MEDIUM" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Taubane" table="Taubane">
+  <FeatureTypeMapping name="app:Taubane" table="taubane">
     <FIDMapping prefix="app.Taubane_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -1650,43 +864,66 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:nrlpeker" mapping="nrlpeker" />
+    <Primitive path="app:taubanetype" mapping="taubanetype" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Tribune" table="Tribune">
+  <FeatureTypeMapping name="app:Taubanemast" table="taubanemast">
+    <FIDMapping prefix="app.Taubanemast_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:nrlpeker" mapping="nrlpeker" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:linjebredde" mapping="linjebredde" />
+    <Complex path="app:posisjon">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:Tribune" table="tribune">
     <FIDMapping prefix="app.Tribune_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -1694,36 +931,29 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
     <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:BeskrivendeHjelpelinjeAnlegg" table="BeskrivendeHjelpelinjeAnlegg">
+  <FeatureTypeMapping name="app:BeskrivendeHjelpelinjeAnlegg" table="beskrivendehjelpelinjeanlegg">
     <FIDMapping prefix="app.BeskrivendeHjelpelinjeAnlegg_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -1731,204 +961,61 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-    <Primitive path="app:medium" mapping="MEDIUM" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:FiktivAvgrensningForAnlegg" table="FiktivAvgrensningForAnlegg">
-    <FIDMapping prefix="app.FiktivAvgrensningForAnlegg_">
+  <FeatureTypeMapping name="app:Demning" table="demning">
+    <FIDMapping prefix="app.Demning_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
     <Complex path="app:identifikasjon">
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Dam" table="Dam">
-    <FIDMapping prefix="app.Dam_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
     <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Dike" table="Dike">
-    <FIDMapping prefix="app.Dike_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
-    </Complex>
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Dikekant" table="Dikekant">
-    <FIDMapping prefix="app.Dikekant_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Elveforbygning" table="Elveforbygning">
+  <FeatureTypeMapping name="app:Elveforbygning" table="elveforbygning">
     <FIDMapping prefix="app.Elveforbygning_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -1936,36 +1023,29 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
     <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Elveterskel" table="Elveterskel">
+  <FeatureTypeMapping name="app:Elveterskel" table="elveterskel">
     <FIDMapping prefix="app.Elveterskel_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -1973,36 +1053,50 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
     <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Fiskehjell" table="Fiskehjell">
+  <FeatureTypeMapping name="app:FiktivAvgrensningForAnlegg" table="fiktivavgrensningforanlegg">
+    <FIDMapping prefix="app.FiktivAvgrensningForAnlegg_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Complex path="app:grense">
+      <Geometry path="." mapping="geometri" />
+    </Complex>
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:Fiskehjell" table="fiskehjell">
     <FIDMapping prefix="app.Fiskehjell_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -2010,36 +1104,29 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
     <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:FiskehjellMøne" table="FiskehjellMøne">
+  <FeatureTypeMapping name="app:FiskehjellMøne" table="fiskehjellmøne">
     <FIDMapping prefix="app.FiskehjellMøne_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -2047,42 +1134,29 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Fisketrapp" table="Fisketrapp">
+  <FeatureTypeMapping name="app:Fisketrapp" table="fisketrapp">
     <FIDMapping prefix="app.Fisketrapp_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -2090,42 +1164,29 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-  </FeatureTypeMapping-->
-  <FeatureTypeMapping name="app:Flytebrygge" table="Flytebrygge">
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:Flytebrygge" table="flytebrygge">
     <FIDMapping prefix="app.Flytebrygge_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -2133,199 +1194,141 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:sluttdato" mapping="SLUTTDATO" />
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:registreringsversjon" mapping="REGISTRERINGSVERSJON" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:datafangstmetode" mapping="DATAFANGSTMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:datafangstmetodeHøyde" mapping="DATAFANGSTMETODEHØYDE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
     <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
   </FeatureTypeMapping>
-
-    
-  <!--FeatureTypeMapping name="app:Fløtningsrenne" table="Fløtningsrenne">
-    <FIDMapping prefix="app.Fløtningsrenne_">
+  <FeatureTypeMapping name="app:FlytebryggeLandgang" table="flytebryggelandgang">
+    <FIDMapping prefix="app.FlytebryggeLandgang_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
     <Complex path="app:identifikasjon">
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Primitive path="app:medium" mapping="MEDIUM" />
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Fortøyningskar" table="Fortøyningskar">
-    <FIDMapping prefix="app.Fortøyningskar_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
-      </Complex>
-    </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-  </FeatureTypeMapping-->
-  <!--FeatureTypeMapping name="app:KaiBrygge" table="KaiBrygge">
-    <FIDMapping prefix="app.Kai_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
-    </Complex>
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:KaiFront" table="KaiFront">
-    <FIDMapping prefix="app.KaiFront_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
-    <Complex path="app:kvalitet">
-      <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
     <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-  </FeatureTypeMapping-->
-  <!--FeatureTypeMapping name="app:Molo" table="Molo">
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:FlytebryggeUtligger" table="flytebryggeutligger">
+    <FIDMapping prefix="app.FlytebryggeUtligger_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+      </Complex>
+    </Complex>
+    <Complex path="app:senterlinje">
+      <Geometry path="." mapping="geometri" />
+    </Complex>
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:KaiBrygge" table="kaibrygge">
+    <FIDMapping prefix="app.KaiBrygge_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Primitive path="app:havnedatapeker" mapping="havnedatapeker" />
+    <Complex path="app:område">
+      <Geometry path="." mapping="geometri" />
+    </Complex>
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:KaiBryggeKant" table="kaibryggekant">
+    <FIDMapping prefix="app.KaiBryggeKant_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+      </Complex>
+    </Complex>
+    <Complex path="app:grense">
+      <Geometry path="." mapping="geometri" />
+    </Complex>
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:Molo" table="molo">
     <FIDMapping prefix="app.Molo_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -2333,37 +1336,60 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:område">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
+    </Complex>
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:Navigasjonsinstallasjon" table="navigasjonsinstallasjon">
+    <FIDMapping prefix="app.Navigasjonsinstallasjon_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+      </Complex>
     </Complex>
     <Complex path="app:posisjon">
-      <Geometry path="." mapping="RepPunkt_SPA" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
-    <Primitive path="app:medium" mapping="MEDIUM" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Oppdrettskar" table="Oppdrettskar">
+  <FeatureTypeMapping name="app:Oppdrettskar" table="oppdrettskar">
     <FIDMapping prefix="app.Oppdrettskar_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -2371,87 +1397,61 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:OppdrettsmerderKant" table="OppdrettsmerderKant">
-    <FIDMapping prefix="app.OppdrettsmerderKant_">
+  <FeatureTypeMapping name="app:Oppdrettslokalitet" table="oppdrettslokalitet">
+    <FIDMapping prefix="app.Oppdrettslokalitet_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
     <Complex path="app:identifikasjon">
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
+    <Complex path="app:område">
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Pælebunt" table="Pælebunt">
+  <FeatureTypeMapping name="app:Pælebunt" table="pælebunt">
     <FIDMapping prefix="app.Pælebunt_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -2459,43 +1459,30 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:posisjon">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Rørgate" table="Rørgate">
+  <FeatureTypeMapping name="app:Rørgate" table="rørgate">
     <FIDMapping prefix="app.Rørgate_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -2503,44 +1490,31 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
-    <Primitive path="app:medium" mapping="MEDIUM" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Slipp" table="Slipp">
+  <FeatureTypeMapping name="app:Slipp" table="slipp">
     <FIDMapping prefix="app.Slipp_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -2548,43 +1522,30 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="HREF" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Sluse" table="Sluse">
+  <FeatureTypeMapping name="app:Sluse" table="sluse">
     <FIDMapping prefix="app.Sluse_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
@@ -2592,66 +1553,28 @@
       <Complex path="app:Identifikasjon">
         <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
     </Complex>
-    <Primitive path="app:datafangstdato" mapping="DATAFANGSTDATO" />
-    <Complex path="app:registreringsversjon">
-      <Complex path="app:Registreringsversjon">
-        <Primitive path="app:produkt" mapping="PRODUKT" />
-        <Primitive path="app:versjon" mapping="VERSJON" />
-        <Primitive path="app:undertype" mapping="UNDERVERSJON" />
-      </Complex>
-    </Complex>
-    <Primitive path="app:verifiseringsdato" mapping="VERIFISERINGSDATO" />
-    <Primitive path="app:oppdateringsdato" mapping="OPPDATERINGSDATO" />
-    <Primitive path="app:informasjon" mapping="INFORMASJON" />
-    <Primitive path="app:prosesshistorie" mapping="PROSESS_HISTORIE" />
-    <Complex path="app:kopidata">
-      <Complex path="app:Kopidata">
-        <Primitive path="app:områdeId" mapping="OMRÅDEID" />
-        <Primitive path="app:originalDatavert" mapping="ORIGINALDATAVERT" />
-        <Primitive path="app:kopidato" mapping="KOPIDATO" />
-      </Complex>
-    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
+    <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
+    <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
-        <Primitive path="app:målemetode" mapping="MÅLEMETODE" />
-        <Primitive path="app:nøyaktighet" mapping="NØYAKTIGHET" />
-        <Primitive path="app:synbarhet" mapping="SYNBARHET" />
-        <Primitive path="app:målemetodeHøyde" mapping="H_MÅLEMETODE" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="H_NØYAKTIGHET" />
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Primitive path="app:sluseType" mapping="slusetyp" />
+    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
+      <Geometry path="." mapping="geometri" />
     </Complex>
-    <Primitive path="app:sluseType" mapping="SLUSETYP" />
-    <Primitive path="app:høydereferanse" mapping="HREF" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:KantUtsnitt" table="KantUtsnitt">
-    <FIDMapping prefix="app.KantUtsnitt_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-    <Complex path="app:grense">
-      <Geometry path="." mapping="Geometri_SPA" />
-    </Complex>
-    <Complex path="app:identifikasjon">
-      <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="lokalid" />
-        <Primitive path="app:navnerom" mapping="navnerom" />
-        <Primitive path="app:versjonId" mapping="VERSJONID" />
-      </Complex>
-    </Complex>
-  </FeatureTypeMapping-->
 </SQLFeatureStore>
