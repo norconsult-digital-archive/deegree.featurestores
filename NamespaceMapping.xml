@@ -4,5 +4,5 @@
 	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0">FKB-Bygning50.xml</configuration>
 	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0">FKB-BygnAnlegg50.xml</configuration>
 	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Tiltak/5.0">FKB-Tiltak50.xml</configuration>
-	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ar5/5.0">FKB-AR5_50.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-AR5/5.0">FKB-AR5_50.xml</configuration>
 </configurations>
