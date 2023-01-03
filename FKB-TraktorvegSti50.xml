@@ -67,7 +67,7 @@
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Primitive path="app:turruterpeker" mapping="turruterpeker" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Vegsperring" table="vegsperring">

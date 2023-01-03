@@ -40,7 +40,7 @@
     <Primitive path="app:høydeoverbakken" mapping="hob" />
     <Primitive path="app:tiltakstypeBygning" mapping="tiltakstypebygning" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
@@ -78,7 +78,7 @@
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Primitive path="app:tiltaksansvarlig" mapping="tiltaksansvarlig" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
@@ -117,7 +117,7 @@
     <Primitive path="app:tiltaksansvarlig" mapping="tiltaksansvarlig" />
     <Primitive path="app:andretiltak" mapping="tiltaktypeandre" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
@@ -151,7 +151,7 @@
     <Primitive path="app:kartregistrering" mapping="kartreg" />
     <Primitive path="app:knekklinjetype" mapping="knekklinjetype" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
 </SQLFeatureStore>

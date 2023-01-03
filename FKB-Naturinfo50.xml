@@ -33,7 +33,7 @@
     <Primitive path="app:høydereferanse" mapping="href" />
     <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:InnmåltTre" table="innmålttre">
@@ -101,7 +101,7 @@
       </Complex>
     </Complex>
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
 </SQLFeatureStore>

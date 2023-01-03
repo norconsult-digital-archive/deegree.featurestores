@@ -31,7 +31,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
@@ -65,7 +65,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Helikopterlandingsplass" table="helikopterlandingsplass">
@@ -96,7 +96,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Lufthavnlys" table="lufthavnlys">

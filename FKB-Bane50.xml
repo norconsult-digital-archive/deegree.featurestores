@@ -32,7 +32,7 @@
     <Primitive path="app:medium" mapping="medium" />
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Spormidt" table="spormidt">
@@ -66,7 +66,7 @@
     <Primitive path="app:medium" mapping="medium" />
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
 </SQLFeatureStore>

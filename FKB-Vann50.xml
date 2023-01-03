@@ -33,7 +33,7 @@
     <Primitive path="app:høyde" mapping="høyde" />
     <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:KystkonturTekniskeAnlegg" table="kystkonturtekniskeanlegg">
@@ -67,7 +67,7 @@
     <Primitive path="app:høyde" mapping="høyde" />
     <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Skjær" table="skjær">
@@ -120,7 +120,7 @@
     <Primitive path="app:sluttdato" mapping="sluttdato" />
     <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
@@ -154,7 +154,7 @@
     </Complex>
     <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Elv" table="elv">
@@ -180,7 +180,7 @@
       <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Kanalkant" table="kanalkant">
@@ -211,7 +211,7 @@
     </Complex>
     <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Kanal" table="kanal">
@@ -237,7 +237,7 @@
       <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Innsjøkant" table="innsjøkant">
@@ -269,7 +269,7 @@
     <Primitive path="app:medium" mapping="medium" />
     <Primitive path="app:høyde" mapping="høyde" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Innsjø" table="innsjø">
@@ -294,7 +294,7 @@
     <Primitive path="app:regulert" mapping="regulert" />
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
@@ -329,7 +329,7 @@
     <Primitive path="app:vannBredde" mapping="vannbr" />
     <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:KanalGrøft" table="kanalgrøft">
@@ -361,7 +361,7 @@
     <Primitive path="app:vannBredde" mapping="vannbr" />
     <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:VeggrøftÅpen" table="veggrøftåpen">
@@ -391,7 +391,7 @@
       </Complex>
     </Complex>
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:SnøIsbreKant" table="snøisbrekant">
@@ -421,7 +421,7 @@
       </Complex>
     </Complex>
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:SnøIsbre" table="snøisbre">
@@ -442,7 +442,7 @@
     <Primitive path="app:informasjon" mapping="informasjon" />
     <Primitive path="app:sluttdato" mapping="sluttdato" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
@@ -475,7 +475,7 @@
       </Complex>
     </Complex>
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:VannFiktivGrense" table="vannfiktivgrense">
@@ -506,7 +506,7 @@
     </Complex>
     <Primitive path="app:vannSperretype" mapping="vann_sperretype" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:KonnekteringVann" table="konnekteringvann">
@@ -537,7 +537,7 @@
     </Complex>
     <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
 </SQLFeatureStore>

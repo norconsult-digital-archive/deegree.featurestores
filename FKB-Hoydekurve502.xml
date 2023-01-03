@@ -38,7 +38,7 @@
       </Complex>
     </Complex>
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Forsenkningskurve" table="forsenkningskurve">
@@ -76,7 +76,7 @@
       </Complex>
     </Complex>
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Toppunkt" table="toppunkt">
@@ -189,7 +189,7 @@
       </Complex>
     </Complex>
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Terrengpunkt" table="terrengpunkt">

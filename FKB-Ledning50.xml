@@ -38,7 +38,7 @@
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Flymarkør" table="flymarkør">
@@ -131,7 +131,7 @@
       </Complex>
     </Complex>
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Kabelkanal" table="kabelkanal">
@@ -169,7 +169,7 @@
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Kum" table="kum">
@@ -207,7 +207,7 @@
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Kumlokk" table="kumlokk">
@@ -302,7 +302,7 @@
     </Complex>
     <Primitive path="app:fase" mapping="fase" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Lysarmatur" table="lysarmatur">
@@ -423,7 +423,7 @@
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
     <Primitive path="app:type" mapping="mastekonstruksjon" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Nettverkstasjon" table="nettverkstasjon">
@@ -500,7 +500,7 @@
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Skap" table="skap">
@@ -594,7 +594,7 @@
     </Complex>
     <Primitive path="app:trasenavn" mapping="trasenavn" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Vindturbin" table="vindturbin">
@@ -672,7 +672,7 @@
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Åk" table="åk">
@@ -710,7 +710,7 @@
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
 </SQLFeatureStore>

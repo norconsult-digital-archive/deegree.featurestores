@@ -51,7 +51,7 @@
     <Primitive path="app:informasjon" mapping="informasjon" />
     <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
@@ -87,7 +87,7 @@
     <Primitive path="app:høydereferanse" mapping="href" />
     <Primitive path="app:lavestegulv" mapping="lavestegulv" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Bygningsdelelinje" table="bygningsdelelinje">
@@ -109,7 +109,7 @@
     <Primitive path="app:informasjon" mapping="informasjon" />
     <Primitive path="app:treDNivå" mapping="tre_d_nivå" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Fasadeliv" table="fasadeliv">
@@ -142,7 +142,7 @@
     <Primitive path="app:høydereferanse" mapping="href" />
     <Primitive path="app:skalAvgrenseBygning" mapping="skal_avgr_bygn" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:FiktivBygningsavgrensning" table="fiktivbygningsavgrensning">
@@ -173,7 +173,7 @@
     </Complex>
     <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Grunnmur" table="grunnmur">
@@ -205,7 +205,7 @@
     <Primitive path="app:medium" mapping="medium" />
     <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Takkant" table="takkant">
@@ -238,7 +238,7 @@
     <Primitive path="app:treDNivå" mapping="tre_d_nivå" />
     <Primitive path="app:takskjegg" mapping="takskjegg" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Arkade" table="arkade">
@@ -270,7 +270,7 @@
     <Primitive path="app:treDNivå" mapping="tre_d_nivå" />
     <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Bygningslinje" table="bygningslinje">
@@ -301,7 +301,7 @@
     </Complex>
     <Primitive path="app:treDNivå" mapping="tre_d_nivå" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Hjelpelinje3D" table="hjelpelinje3d">
@@ -332,7 +332,7 @@
     </Complex>
     <Primitive path="app:treDNivå" mapping="tre_d_nivå" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Hjelpepunkt3D" table="hjelpepunkt3d">
@@ -394,7 +394,7 @@
     </Complex>
     <Primitive path="app:treDNivå" mapping="tre_d_nivå" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Portrom" table="portrom">
@@ -426,7 +426,7 @@
     <Primitive path="app:treDNivå" mapping="tre_d_nivå" />
     <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:TakMur" table="takmur">
@@ -457,7 +457,7 @@
     </Complex>
     <Primitive path="app:treDNivå" mapping="tre_d_nivå" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Takplatå" table="takplatå">
@@ -488,7 +488,7 @@
     </Complex>
     <Primitive path="app:treDNivå" mapping="tre_d_nivå" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:TakplatåTopp" table="takplatåtopp">
@@ -519,7 +519,7 @@
     </Complex>
     <Primitive path="app:treDNivå" mapping="tre_d_nivå" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Taksprang" table="taksprang">
@@ -550,7 +550,7 @@
     </Complex>
     <Primitive path="app:treDNivå" mapping="tre_d_nivå" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:TaksprangBunn" table="taksprangbunn">
@@ -581,7 +581,7 @@
     </Complex>
     <Primitive path="app:treDNivå" mapping="tre_d_nivå" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:BygningBru" table="bygningbru">
@@ -611,7 +611,7 @@
       </Complex>
     </Complex>
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Låvebru" table="låvebru">
@@ -641,7 +641,7 @@
       </Complex>
     </Complex>
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:TrappBygg" table="trappbygg">
@@ -671,7 +671,7 @@
       </Complex>
     </Complex>
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Veranda" table="veranda">
@@ -703,7 +703,7 @@
     <Primitive path="app:høydereferanse" mapping="href" />
     <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:VeggFrittstående" table="veggfrittstående">
@@ -735,7 +735,7 @@
     <Primitive path="app:høydereferanse" mapping="href" />
     <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Takoverbygg" table="takoverbygg">
@@ -756,7 +756,7 @@
     <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
     <Primitive path="app:informasjon" mapping="informasjon" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
@@ -789,7 +789,7 @@
       </Complex>
     </Complex>
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
 </SQLFeatureStore>

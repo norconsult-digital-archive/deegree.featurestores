@@ -31,7 +31,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Grustak" table="grustak">
@@ -62,7 +62,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Industriområde" table="industriområde">
@@ -93,7 +93,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Steintipp" table="steintipp">
@@ -124,7 +124,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Transformatorstasjon" table="transformatorstasjon">
@@ -155,7 +155,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Alpinbakke" table="alpinbakke">
@@ -186,7 +186,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Campingplass" table="campingplass">
@@ -217,7 +217,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Golfbane" table="golfbane">
@@ -248,7 +248,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Lekeplass" table="lekeplass">
@@ -279,7 +279,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Skytebane" table="skytebane">
@@ -310,7 +310,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:SportIdrettPlass" table="sportidrettplass">
@@ -341,7 +341,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Gravplass" table="gravplass">
@@ -372,7 +372,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Park" table="park">
@@ -403,7 +403,7 @@
     </Complex>
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
 </SQLFeatureStore>

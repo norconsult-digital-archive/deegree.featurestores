@@ -27,7 +27,7 @@
     <Primitive path="app:klassifiseringsmetode" mapping="klassifiseringsmetode" />
     <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
@@ -60,7 +60,7 @@
       </Complex>
     </Complex>
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:ArealressursGrenseFiktiv" table="arealressursgrensefiktiv">
@@ -81,7 +81,7 @@
     <Primitive path="app:informasjon" mapping="informasjon" />
     <Primitive path="app:opphav" mapping="opphav" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
 </SQLFeatureStore>

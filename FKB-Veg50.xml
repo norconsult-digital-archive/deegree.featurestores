@@ -24,7 +24,7 @@
     <Primitive path="app:eksternPeker" mapping="eksternpeker" />
     <Primitive path="app:nvdbPeker" mapping="nvdbpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
@@ -51,7 +51,7 @@
     <Primitive path="app:eksternPeker" mapping="eksternpeker" />
     <Primitive path="app:nvdbPeker" mapping="nvdbpeker" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
@@ -90,7 +90,7 @@
     </Complex>
     <Primitive path="app:vegOverVeg" mapping="vegoverveg" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
@@ -129,7 +129,7 @@
     </Complex>
     <Primitive path="app:vegOverVeg" mapping="vegoverveg" />
     <Complex path="app:område">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
@@ -164,7 +164,7 @@
       </Complex>
     </Complex>
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Vegdekkekant" table="vegdekkekant">
@@ -197,7 +197,7 @@
     </Complex>
     <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:VegFiktivGrense" table="vegfiktivgrense">
@@ -229,7 +229,7 @@
       </Complex>
     </Complex>
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:AnnetVegarealAvgrensning" table="annetvegarealavgrensning">
@@ -261,7 +261,7 @@
       </Complex>
     </Complex>
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:FartsdemperAvgrensning" table="fartsdemperavgrensning">
@@ -294,7 +294,7 @@
     </Complex>
     <Primitive path="app:nvdbPeker" mapping="nvdbpeker" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:FeristAvgrensning" table="feristavgrensning">
@@ -327,7 +327,7 @@
     </Complex>
     <Primitive path="app:nvdbPeker" mapping="nvdbpeker" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:GangfeltAvgrensning" table="gangfeltavgrensning">
@@ -360,7 +360,7 @@
     </Complex>
     <Primitive path="app:nvdbPeker" mapping="nvdbpeker" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Kantstein" table="kantstein">
@@ -393,7 +393,7 @@
     </Complex>
     <Primitive path="app:nedsenketKantstein" mapping="nedsenketkantstein" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Kjørebanekant" table="kjørebanekant">
@@ -425,7 +425,7 @@
       </Complex>
     </Complex>
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:OverkjørbartArealAvgrensning" table="overkjørbartarealavgrensning">
@@ -459,7 +459,7 @@
     <Primitive path="app:nvdbPeker" mapping="nvdbpeker" />
     <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Skiltportal" table="skiltportal">
@@ -492,7 +492,7 @@
     </Complex>
     <Primitive path="app:nvdbPeker" mapping="nvdbpeker" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Trafikksignalpunkt" table="trafikksignalpunkt">
@@ -562,7 +562,7 @@
     <Primitive path="app:høydereferanse" mapping="href" />
     <Primitive path="app:vegbomtype" mapping="vegbomtype" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Vegoppmerking" table="vegoppmerking">
@@ -596,7 +596,7 @@
     <Primitive path="app:nvdbPeker" mapping="nvdbpeker" />
     <Primitive path="app:bruksområde" mapping="bruksområde" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Vegrekkverk" table="vegrekkverk">
@@ -631,7 +631,7 @@
     <Primitive path="app:høydereferanse" mapping="href" />
     <Primitive path="app:rekkverkstype" mapping="rekkverkstype" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Vegskulderkant" table="vegskulderkant">
@@ -665,7 +665,7 @@
     <Primitive path="app:nvdbPeker" mapping="nvdbpeker" />
     <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
 </SQLFeatureStore>
