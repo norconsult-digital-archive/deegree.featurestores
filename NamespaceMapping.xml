@@ -14,4 +14,6 @@
 	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-TraktorvegSti/5.0">FKB-TraktorvegSti50.xml</configuration>
 	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0">FKB-Veg50.xml</configuration>
 	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0">FKB-Vann50.xml</configuration>
+	<configuration namespace="http://skjema.test.geonorge.no/SOSI/produktspesifikasjon/Elveg/2.0">Elveg20.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/Elveg/2.0">Elveg20.xml</configuration>
 </configurations>
