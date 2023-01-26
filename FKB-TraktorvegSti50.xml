@@ -33,10 +33,7 @@
     <Primitive path="app:konnekteringslenke" mapping="konnekteringslenke" />
     <Complex path="app:veglenkeadresse">
       <Complex path="app:Veglenkeadresse">
-      	  		<Complex path="app:kommunenummer">
-					<Primitive path="text()" mapping="veglenkeadresse_komm"/>
-				</Complex>
-        <!--Primitive path="app:kommunenummer" mapping="veglenkeadresse_komm" /-->
+        <Primitive path="app:kommunenummer" mapping="veglenkeadresse_komm" />
         <Primitive path="app:adressekode" mapping="adressekode" />
         <Primitive path="app:adressenavn" mapping="adressenavn" />
         <Primitive path="app:sideveg" mapping="sideveg" />
