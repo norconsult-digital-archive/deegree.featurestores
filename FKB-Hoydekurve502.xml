@@ -2,9 +2,9 @@
 <SQLFeatureStore xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:app="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Hoydekurve/5.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.deegree.org/datasource/feature/sql http://schemas.deegree.org/datasource/feature/sql/3.1.0/sql.xsd" configVersion="3.1.0" xmlns="http://www.deegree.org/datasource/feature/sql">
   <JDBCConnId>sql_terr</JDBCConnId>
   <StorageCRS srid="5972" dim="3D">EPSG:5972</StorageCRS>
-  <GMLSchema>http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Høydekurve/5.0/FKBHøydekurve.xsd</GMLSchema>
-  <FeatureTypeMapping name="app:Høydekurve" table="høydekurve">
-    <FIDMapping prefix="app.Høydekurve_">
+  <GMLSchema>http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-HÃ¸ydekurve/5.0/FKBHÃ¸ydekurve.xsd</GMLSchema>
+  <FeatureTypeMapping name="app:HÃ¸ydekurve" table="hÃ¸ydekurve">
+    <FIDMapping prefix="app.HÃ¸ydekurve_">
       <Column name="lokalid" type="string" />
     </FIDMapping>
     <Complex path="app:identifikasjon">
@@ -24,13 +24,13 @@
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
         <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
-        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:nÃ¸yaktighet" mapping="nÃ¸yaktighet" />
         <Primitive path="app:synbarhet" mapping="synbarhet" />
-        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+        <Primitive path="app:datafangstmetodeHÃ¸yde" mapping="datafangstmetodehÃ¸yde" />
+        <Primitive path="app:nÃ¸yaktighetHÃ¸yde" mapping="h_nÃ¸yaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høyde" mapping="høyde" />
+    <Primitive path="app:hÃ¸yde" mapping="hÃ¸yde" />
     <Complex path="app:opphav">
       <Complex path="app:Opphav">
         <Primitive path="app:sikkerTerrenggjengivelse" mapping="sikkerterrenggjengivelse" />
@@ -62,13 +62,13 @@
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
         <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
-        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:nÃ¸yaktighet" mapping="nÃ¸yaktighet" />
         <Primitive path="app:synbarhet" mapping="synbarhet" />
-        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+        <Primitive path="app:datafangstmetodeHÃ¸yde" mapping="datafangstmetodehÃ¸yde" />
+        <Primitive path="app:nÃ¸yaktighetHÃ¸yde" mapping="h_nÃ¸yaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høyde" mapping="høyde" />
+    <Primitive path="app:hÃ¸yde" mapping="hÃ¸yde" />
     <Complex path="app:opphav">
       <Complex path="app:Opphav">
         <Primitive path="app:sikkerTerrenggjengivelse" mapping="sikkerterrenggjengivelse" />
@@ -100,13 +100,13 @@
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
         <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
-        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:nÃ¸yaktighet" mapping="nÃ¸yaktighet" />
         <Primitive path="app:synbarhet" mapping="synbarhet" />
-        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+        <Primitive path="app:datafangstmetodeHÃ¸yde" mapping="datafangstmetodehÃ¸yde" />
+        <Primitive path="app:nÃ¸yaktighetHÃ¸yde" mapping="h_nÃ¸yaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høyde" mapping="høyde" />
+    <Primitive path="app:hÃ¸yde" mapping="hÃ¸yde" />
     <Complex path="app:opphav">
       <Complex path="app:Opphav">
         <Primitive path="app:sikkerTerrenggjengivelse" mapping="sikkerterrenggjengivelse" />
@@ -138,13 +138,13 @@
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
         <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
-        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:nÃ¸yaktighet" mapping="nÃ¸yaktighet" />
         <Primitive path="app:synbarhet" mapping="synbarhet" />
-        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+        <Primitive path="app:datafangstmetodeHÃ¸yde" mapping="datafangstmetodehÃ¸yde" />
+        <Primitive path="app:nÃ¸yaktighetHÃ¸yde" mapping="h_nÃ¸yaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høyde" mapping="høyde" />
+    <Primitive path="app:hÃ¸yde" mapping="hÃ¸yde" />
     <Complex path="app:opphav">
       <Complex path="app:Opphav">
         <Primitive path="app:sikkerTerrenggjengivelse" mapping="sikkerterrenggjengivelse" />
@@ -176,10 +176,10 @@
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
         <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
-        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:nÃ¸yaktighet" mapping="nÃ¸yaktighet" />
         <Primitive path="app:synbarhet" mapping="synbarhet" />
-        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+        <Primitive path="app:datafangstmetodeHÃ¸yde" mapping="datafangstmetodehÃ¸yde" />
+        <Primitive path="app:nÃ¸yaktighetHÃ¸yde" mapping="h_nÃ¸yaktighet" />
       </Complex>
     </Complex>
     <Complex path="app:opphav">
@@ -213,13 +213,13 @@
     <Complex path="app:kvalitet">
       <Complex path="app:Posisjonskvalitet">
         <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
-        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:nÃ¸yaktighet" mapping="nÃ¸yaktighet" />
         <Primitive path="app:synbarhet" mapping="synbarhet" />
-        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
-        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+        <Primitive path="app:datafangstmetodeHÃ¸yde" mapping="datafangstmetodehÃ¸yde" />
+        <Primitive path="app:nÃ¸yaktighetHÃ¸yde" mapping="h_nÃ¸yaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høyde" mapping="høyde" />
+    <Primitive path="app:hÃ¸yde" mapping="hÃ¸yde" />
     <Complex path="app:opphav">
       <Complex path="app:Opphav">
         <Primitive path="app:sikkerTerrenggjengivelse" mapping="sikkerterrenggjengivelse" />
