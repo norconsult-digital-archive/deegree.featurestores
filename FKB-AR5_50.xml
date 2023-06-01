@@ -20,18 +20,18 @@
     <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
     <Primitive path="app:informasjon" mapping="informasjon" />
     <Primitive path="app:opphav" mapping="opphav" />
-    <Primitive path="app:arealtype" mapping="artype" />
-    <Primitive path="app:treslag" mapping="artreslag" />
-    <Primitive path="app:skogbonitet" mapping="arskogbon" />
-    <Primitive path="app:grunnforhold" mapping="argrunnf" />
-    <Primitive path="app:klassifiseringsmetode" mapping="klassifiseringsmetode" />
-    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
+    <Primitive path="app:arealtype" mapping="artype" />
+    <Primitive path="app:treslag" mapping="artreslag" />
+    <Primitive path="app:skogbonitet" mapping="arskogbon" />
+    <Primitive path="app:grunnforhold" mapping="argrunnf" />
+    <Primitive path="app:klassifiseringsmetode" mapping="klassifiseringsmetode" />
+    <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:ArealressursGrense" table="arealressursgrense">
     <FIDMapping prefix="app.ArealressursGrense_">
@@ -50,6 +50,9 @@
     <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
     <Primitive path="app:informasjon" mapping="informasjon" />
     <Primitive path="app:opphav" mapping="opphav" />
+    <Complex path="app:grense">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:avgrensingType" mapping="aravgrtype" />
     <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
     <Complex path="app:kvalitet">
@@ -58,9 +61,6 @@
         <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
         <Primitive path="app:synbarhet" mapping="synbarhet" />
       </Complex>
-    </Complex>
-    <Complex path="app:grense">
-      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:ArealressursGrenseFiktiv" table="arealressursgrensefiktiv">

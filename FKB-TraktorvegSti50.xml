@@ -29,6 +29,9 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Complex path="app:senterlinje">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:typeveg" mapping="typeveg" />
     <Primitive path="app:konnekteringslenke" mapping="konnekteringslenke" />
     <Complex path="app:veglenkeadresse">
@@ -66,9 +69,6 @@
     <Primitive path="app:beredskapsveg" mapping="beredskapsveg" />
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Primitive path="app:turruterpeker" mapping="turruterpeker" />
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri_spa" />
-    </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Vegsperring" table="vegsperring">
     <FIDMapping prefix="app.Vegsperring_">
@@ -96,6 +96,9 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Complex path="app:posisjon">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:typevegsperring" mapping="typevegsperring" />
     <Primitive path="app:funksjon" mapping="funksjon" />
     <Primitive path="app:gjeldertidsrom" mapping="gjeldertidsrom" />
@@ -118,8 +121,5 @@
     </Complex>
     <Primitive path="app:kommunenummer" mapping="komm" />
     <Primitive path="app:eier" mapping="eier" />
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="geometri_spa" />
-    </Complex>
   </FeatureTypeMapping>
 </SQLFeatureStore>

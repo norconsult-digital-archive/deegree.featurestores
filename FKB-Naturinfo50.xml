@@ -29,12 +29,12 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:treType" mapping="tre_typ" />
-    <Primitive path="app:høydereferanse" mapping="href" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:senterlinje">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:treType" mapping="tre_typ" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:InnmåltTre" table="innmålttre">
     <FIDMapping prefix="app.InnmåltTre_">
@@ -62,6 +62,9 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Complex path="app:posisjon">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:treType" mapping="tre_typ" />
     <Primitive path="app:høydereferanse" mapping="href" />
     <Primitive path="app:medium" mapping="medium" />
@@ -70,9 +73,6 @@
     <Primitive path="app:stammediameter" mapping="stammediameter" />
     <Primitive path="app:kronediameter" mapping="kronediameter" />
     <Primitive path="app:trehøyde" mapping="trehøyde" />
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="geometri_spa" />
-    </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Stein" table="stein">
     <FIDMapping prefix="app.Stein_">

@@ -29,13 +29,13 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Taksebanegrense" table="taksebanegrense">
     <FIDMapping prefix="app.Taksebanegrense_">
@@ -63,10 +63,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:grense">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Helikopterlandingsplass" table="helikopterlandingsplass">
     <FIDMapping prefix="app.Helikopterlandingsplass_">
@@ -94,10 +94,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Lufthavnlys" table="lufthavnlys">
     <FIDMapping prefix="app.Lufthavnlys_">
@@ -125,10 +125,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
-    <Primitive path="app:lufthavnlystype" mapping="lhlystype" />
     <Complex path="app:posisjon">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
+    <Primitive path="app:lufthavnlystype" mapping="lhlystype" />
   </FeatureTypeMapping>
 </SQLFeatureStore>

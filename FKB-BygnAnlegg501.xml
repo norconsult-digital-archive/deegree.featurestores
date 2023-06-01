@@ -30,13 +30,13 @@
       </Complex>
     </Complex>
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
+    <Complex path="app:område">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:bruOverBru" mapping="bruoverbru" />
     <Primitive path="app:brutrafikktype" mapping="brutrafikktype" />
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Primitive path="app:friseilingshøyde" mapping="friseilingshøyde" />
-    <Complex path="app:område">
-      <Geometry path="." mapping="geometri_spa" />
-    </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Brudetalj" table="brudetalj">
     <FIDMapping prefix="app.Brudetalj_">
@@ -187,15 +187,15 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:medium" mapping="medium" />
-    <Primitive path="app:høydereferanse" mapping="href" />
-    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Brønn" table="brønn">
     <FIDMapping prefix="app.Brønn_">
@@ -223,13 +223,13 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Flaggstang" table="flaggstang">
     <FIDMapping prefix="app.Flaggstang_">
@@ -258,11 +258,11 @@
       </Complex>
     </Complex>
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
-    <Primitive path="app:høydereferanse" mapping="href" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:posisjon">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Fundament" table="fundament">
     <FIDMapping prefix="app.Fundament_">
@@ -290,10 +290,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Pipe" table="pipe">
     <FIDMapping prefix="app.Pipe_">
@@ -322,13 +322,13 @@
       </Complex>
     </Complex>
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
-    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Tank" table="tank">
     <FIDMapping prefix="app.Tank_">
@@ -357,13 +357,13 @@
       </Complex>
     </Complex>
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Trapp" table="trapp">
     <FIDMapping prefix="app.Trapp_">
@@ -391,10 +391,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Tårn" table="tårn">
     <FIDMapping prefix="app.Tårn_">
@@ -423,13 +423,13 @@
       </Complex>
     </Complex>
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Gjerde" table="gjerde">
     <FIDMapping prefix="app.Gjerde_">
@@ -458,12 +458,12 @@
       </Complex>
     </Complex>
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
-    <Primitive path="app:gjerdetype" mapping="gjerdetype" />
-    <Primitive path="app:høydereferanse" mapping="href" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:senterlinje">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:gjerdetype" mapping="gjerdetype" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:MurFrittstående" table="murfrittstående">
     <FIDMapping prefix="app.MurFrittstående_">
@@ -491,11 +491,11 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="href" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:grense">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:MurLoddrett" table="murloddrett">
     <FIDMapping prefix="app.MurLoddrett_">
@@ -524,11 +524,11 @@
       </Complex>
     </Complex>
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
-    <Primitive path="app:høydereferanse" mapping="href" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:grense">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Portstolpe" table="portstolpe">
     <FIDMapping prefix="app.Portstolpe_">
@@ -556,10 +556,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:posisjon">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Ruin" table="ruin">
     <FIDMapping prefix="app.Ruin_">
@@ -587,12 +587,12 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="href" />
-    <Primitive path="app:medium" mapping="medium" />
-    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:grense">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Skjerm" table="skjerm">
     <FIDMapping prefix="app.Skjerm_">
@@ -621,13 +621,13 @@
       </Complex>
     </Complex>
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
+    <Complex path="app:senterlinje">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:skjermingsfunksjon" mapping="skjermingfunk" />
     <Primitive path="app:høydereferanse" mapping="href" />
     <Primitive path="app:medium" mapping="medium" />
     <Primitive path="app:høydeOverBakken" mapping="hob" />
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri_spa" />
-    </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:SkråForstøtningsmur" table="skråforstøtningsmur">
     <FIDMapping prefix="app.SkråForstøtningsmur_">
@@ -656,10 +656,10 @@
       </Complex>
     </Complex>
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Voll" table="voll">
     <FIDMapping prefix="app.Voll_">
@@ -688,12 +688,12 @@
       </Complex>
     </Complex>
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
-    <Primitive path="app:skjermingsfunksjon" mapping="skjermingfunk" />
-    <Primitive path="app:høydereferanse" mapping="href" />
-    <Primitive path="app:høydeOverBakken" mapping="hob" />
     <Complex path="app:senterlinje">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:skjermingsfunksjon" mapping="skjermingfunk" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:høydeOverBakken" mapping="hob" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Hoppbakke" table="hoppbakke">
     <FIDMapping prefix="app.Hoppbakke_">
@@ -721,10 +721,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:senterlinje">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Idrettsanlegg" table="idrettsanlegg">
     <FIDMapping prefix="app.Idrettsanlegg_">
@@ -752,10 +752,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:grense">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Parkdetalj" table="parkdetalj">
     <FIDMapping prefix="app.Parkdetalj_">
@@ -783,16 +783,16 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="href" />
-    <Primitive path="app:parkdetaljtype" mapping="parkdetaljtype" />
-    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:parkdetaljtype" mapping="parkdetaljtype" />
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Skytebaneinnretning" table="skytebaneinnretning">
     <FIDMapping prefix="app.Skytebaneinnretning_">
@@ -820,10 +820,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:senterlinje">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Svømmebasseng" table="svømmebasseng">
     <FIDMapping prefix="app.Svømmebasseng_">
@@ -851,10 +851,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Taubane" table="taubane">
     <FIDMapping prefix="app.Taubane_">
@@ -883,12 +883,12 @@
       </Complex>
     </Complex>
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
-    <Primitive path="app:taubanetype" mapping="taubanetype" />
-    <Primitive path="app:høydereferanse" mapping="href" />
-    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:senterlinje">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:taubanetype" mapping="taubanetype" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Taubanemast" table="taubanemast">
     <FIDMapping prefix="app.Taubanemast_">
@@ -917,11 +917,11 @@
       </Complex>
     </Complex>
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
-    <Primitive path="app:høydereferanse" mapping="href" />
-    <Primitive path="app:linjebredde" mapping="linjebredde" />
     <Complex path="app:posisjon">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:linjebredde" mapping="linjebredde" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Tribune" table="tribune">
     <FIDMapping prefix="app.Tribune_">
@@ -979,11 +979,11 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="href" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:senterlinje">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Demning" table="demning">
     <FIDMapping prefix="app.Demning_">
@@ -1188,11 +1188,11 @@
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Flytebrygge" table="flytebrygge">
     <FIDMapping prefix="app.Flytebrygge_">
-      <Column name="LOKALID" type="string" />
+      <Column name="lokalid" type="string" />
     </FIDMapping>
     <Complex path="app:identifikasjon">
       <Complex path="app:Identifikasjon">
-        <Primitive path="app:lokalId" mapping="LOKALID" />
+        <Primitive path="app:lokalId" mapping="lokalid" />
         <Primitive path="app:navnerom" mapping="navnerom" />
         <Primitive path="app:versjonId" mapping="versjonid" />
       </Complex>
@@ -1218,7 +1218,7 @@
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:FlytebryggeLandgang" table="flytebryggelandgang">
     <FIDMapping prefix="app.FlytebryggeLandgang_">
-      <Column name="LOKALID" type="string" />
+      <Column name="lokalid" type="string" />
     </FIDMapping>
     <Complex path="app:identifikasjon">
       <Complex path="app:Identifikasjon">
@@ -1293,10 +1293,10 @@
     <Primitive path="app:verifiseringsdato" mapping="verifiseringsdato" />
     <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
     <Primitive path="app:informasjon" mapping="informasjon" />
-    <Primitive path="app:havnedatapeker" mapping="havnedatapeker" />
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:havnedatapeker" mapping="havnedatapeker" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:KaiBryggeKant" table="kaibryggekant">
     <FIDMapping prefix="app.KaiBryggeKant_">
@@ -1354,10 +1354,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Navigasjonsinstallasjon" table="navigasjonsinstallasjon">
     <FIDMapping prefix="app.Navigasjonsinstallasjon_">
@@ -1415,10 +1415,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:grense">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Oppdrettslokalitet" table="oppdrettslokalitet">
     <FIDMapping prefix="app.Oppdrettslokalitet_">
@@ -1446,10 +1446,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Pælebunt" table="pælebunt">
     <FIDMapping prefix="app.Pælebunt_">
@@ -1477,10 +1477,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:posisjon">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Rørgate" table="rørgate">
     <FIDMapping prefix="app.Rørgate_">
@@ -1508,11 +1508,11 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="href" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:senterlinje">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Slipp" table="slipp">
     <FIDMapping prefix="app.Slipp_">
@@ -1540,10 +1540,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:grense">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høydereferanse" mapping="href" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Sluse" table="sluse">
     <FIDMapping prefix="app.Sluse_">
@@ -1571,10 +1571,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:sluseType" mapping="slusetyp" />
-    <Primitive path="app:høydereferanse" mapping="href" />
     <Complex path="app:grense">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:sluseType" mapping="slusetyp" />
+    <Primitive path="app:høydereferanse" mapping="href" />
   </FeatureTypeMapping>
 </SQLFeatureStore>

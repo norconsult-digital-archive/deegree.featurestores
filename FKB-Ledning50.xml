@@ -113,8 +113,11 @@
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
+    <Complex path="app:senterlinje">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:antallLaserPunkt" mapping="antall_laserpunkt" />
-    <!--Complex path="app:maksVertikalAvstand">
+    <Complex path="app:maksVertikalAvstand">
       <Complex path="app:VertikalAvstandLedning">
         <Complex path="app:vertikalAvstandPosisjon">
 		 <Geometry path="." mapping="maks_nøhkoor"/>
@@ -129,9 +132,6 @@
 		</Complex>
         <Primitive path="app:vertikalAvstand" mapping="min_vertikalavstand" />
       </Complex>
-    </Complex-->
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Kabelkanal" table="kabelkanal">
@@ -244,10 +244,10 @@
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
-    <Primitive path="app:kumlokkform" mapping="kumlokkform" />
     <Complex path="app:punkt">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:kumlokkform" mapping="kumlokkform" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Luftledning" table="luftledning">
     <FIDMapping prefix="app.Luftledning_">
@@ -283,10 +283,13 @@
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
+    <Complex path="app:senterlinje">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:antallLaserPunkt" mapping="antall_laserpunkt" />
-    <!--Complex path="app:maksVertikalAvstand">
+    <Complex path="app:maksVertikalAvstand">
       <Complex path="app:VertikalAvstandLedning">
-                <Complex path="app:vertikalAvstandPosisjon">
+        <Complex path="app:vertikalAvstandPosisjon">
 		 <Geometry path="." mapping="maks_nøhkoor"/>
 		</Complex>
         <Primitive path="app:vertikalAvstand" mapping="maks_vertikalavstand" />
@@ -294,16 +297,13 @@
     </Complex>
     <Complex path="app:minVertikalAvstand">
       <Complex path="app:VertikalAvstandLedning">
-                <Complex path="app:vertikalAvstandPosisjon">
-		 <Geometry path="." mapping="min_nøhkoor"/>
+         <Complex path="app:vertikalAvstandPosisjon">
+			<Geometry path="." mapping="min_nøhkoor"/>
 		</Complex>
         <Primitive path="app:vertikalAvstand" mapping="min_vertikalavstand" />
       </Complex>
-    </Complex-->
-    <Primitive path="app:fase" mapping="fase" />
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:fase" mapping="fase" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Lysarmatur" table="lysarmatur">
     <FIDMapping prefix="app.Lysarmatur_">
@@ -339,10 +339,10 @@
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
-    <Primitive path="app:plassering" mapping="belysningsplassering" />
     <Complex path="app:punkt">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:plassering" mapping="belysningsplassering" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Mast" table="mast">
     <FIDMapping prefix="app.Mast_">
@@ -378,14 +378,14 @@
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
+    <Complex path="app:punkt">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:antallLaserPunkt" mapping="antall_laserpunkt" />
     <Primitive path="app:belysning" mapping="belysning" />
     <Primitive path="app:konstruksjon" mapping="mastekonstruksjon" />
     <Primitive path="app:linjebredde" mapping="linjebredde" />
     <Primitive path="app:vertikalAvstand" mapping="vertikalavstand" />
-    <Complex path="app:punkt"> 
-      <Geometry path="." mapping="geometri_spa" />
-    </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Masteomriss" table="masteomriss">
     <FIDMapping prefix="app.Masteomriss_">
@@ -421,10 +421,10 @@
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
-    <Primitive path="app:type" mapping="mastekonstruksjon" />
     <Complex path="app:grense">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:type" mapping="mastekonstruksjon" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Nettverkstasjon" table="nettverkstasjon">
     <FIDMapping prefix="app.Nettverkstasjon_">
@@ -460,10 +460,10 @@
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
-    <Primitive path="app:plassering" mapping="stasjonsplassering" />
     <Complex path="app:punkt">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:plassering" mapping="stasjonsplassering" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Nettverkstasjonomriss" table="nettverkstasjonomriss">
     <FIDMapping prefix="app.Nettverkstasjonomriss_">
@@ -575,10 +575,13 @@
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
+    <Complex path="app:senterlinje">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:antallLaserPunkt" mapping="antall_laserpunkt" />
-    <!--Complex path="app:maksVertikalAvstand">
+    <Complex path="app:maksVertikalAvstand">
       <Complex path="app:VertikalAvstandLedning">
-                <Complex path="app:vertikalAvstandPosisjon">
+        <Complex path="app:vertikalAvstandPosisjon">
 		 <Geometry path="." mapping="maks_nøhkoor"/>
 		</Complex>
         <Primitive path="app:vertikalAvstand" mapping="maks_vertikalavstand" />
@@ -586,16 +589,13 @@
     </Complex>
     <Complex path="app:minVertikalAvstand">
       <Complex path="app:VertikalAvstandLedning">
-                <Complex path="app:vertikalAvstandPosisjon">
-		 <Geometry path="." mapping="min_nøhkoor"/>
+         <Complex path="app:vertikalAvstandPosisjon">
+			<Geometry path="." mapping="min_nøhkoor"/>
 		</Complex>
         <Primitive path="app:vertikalAvstand" mapping="min_vertikalavstand" />
       </Complex>
-    </Complex-->
-    <Primitive path="app:trasenavn" mapping="trasenavn" />
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:trasenavn" mapping="trasenavn" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Vindturbin" table="vindturbin">
     <FIDMapping prefix="app.Vindturbin_">
@@ -631,11 +631,11 @@
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Primitive path="app:nrlpeker" mapping="nrlpeker" />
     <Primitive path="app:nvdbpeker" mapping="nvdbpeker" />
-    <Primitive path="app:rotorbladlengde" mapping="rotorbladlengde" />
-    <Primitive path="app:navhøyde" mapping="navhøyde" />
     <Complex path="app:punkt">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:rotorbladlengde" mapping="rotorbladlengde" />
+    <Primitive path="app:navhøyde" mapping="navhøyde" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Vindturbinomriss" table="vindturbinomriss">
     <FIDMapping prefix="app.Vindturbinomriss_">

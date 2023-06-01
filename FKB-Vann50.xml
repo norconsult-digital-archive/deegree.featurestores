@@ -2,7 +2,7 @@
 <SQLFeatureStore xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:app="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.deegree.org/datasource/feature/sql http://schemas.deegree.org/datasource/feature/sql/3.1.0/sql.xsd" configVersion="3.1.0" xmlns="http://www.deegree.org/datasource/feature/sql">
   <JDBCConnId>sql</JDBCConnId>
   <StorageCRS srid="5972" dim="3D">EPSG:5972</StorageCRS>
-  <GMLSchema>https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/FKBVann.xsd</GMLSchema>
+  <GMLSchema>http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/FKBVann.xsd</GMLSchema>
   <FeatureTypeMapping name="app:Kystkontur" table="kystkontur">
     <FIDMapping prefix="app.Kystkontur_">
       <Column name="lokalid" type="string" />
@@ -29,12 +29,12 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:kystreferanse" mapping="kystref" />
-    <Primitive path="app:høyde" mapping="høyde" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:grense">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:kystreferanse" mapping="kystref" />
+    <Primitive path="app:høyde" mapping="høyde" />
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:KystkonturTekniskeAnlegg" table="kystkonturtekniskeanlegg">
     <FIDMapping prefix="app.KystkonturTekniskeAnlegg_">
@@ -62,13 +62,13 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Complex path="app:grense">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:kystkonstruksjonstype" mapping="kystkonstruksjonstype" />
     <Primitive path="app:kystreferanse" mapping="kystref" />
     <Primitive path="app:høyde" mapping="høyde" />
     <Primitive path="app:medium" mapping="medium" />
-    <Complex path="app:grense">
-      <Geometry path="." mapping="geometri_spa" />
-    </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Skjær" table="skjær">
     <FIDMapping prefix="app.Skjær_">
@@ -96,10 +96,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:høyde" mapping="høyde" />
     <Complex path="app:posisjon">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:høyde" mapping="høyde" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Havflate" table="havflate">
     <FIDMapping prefix="app.Havflate_">
@@ -118,13 +118,13 @@
     <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
     <Primitive path="app:informasjon" mapping="informasjon" />
     <Primitive path="app:sluttdato" mapping="sluttdato" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Elvekant" table="elvekant">
     <FIDMapping prefix="app.Elvekant_">
@@ -152,10 +152,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:grense">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Elv" table="elv">
     <FIDMapping prefix="app.Elv_">
@@ -174,14 +174,14 @@
     <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
     <Primitive path="app:informasjon" mapping="informasjon" />
     <Primitive path="app:sluttdato" mapping="sluttdato" />
-    <Primitive path="app:vannBredde" mapping="vannbr" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:vannBredde" mapping="vannbr" />
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Kanalkant" table="kanalkant">
     <FIDMapping prefix="app.Kanalkant_">
@@ -209,10 +209,10 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:grense">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Kanal" table="kanal">
     <FIDMapping prefix="app.Kanal_">
@@ -231,14 +231,14 @@
     <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
     <Primitive path="app:informasjon" mapping="informasjon" />
     <Primitive path="app:sluttdato" mapping="sluttdato" />
-    <Primitive path="app:medium" mapping="medium" />
-    <Primitive path="app:vannBredde" mapping="vannbr" />
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
+    <Primitive path="app:vannBredde" mapping="vannbr" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Innsjøkant" table="innsjøkant">
     <FIDMapping prefix="app.Innsjøkant_">
@@ -266,11 +266,11 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:medium" mapping="medium" />
-    <Primitive path="app:høyde" mapping="høyde" />
     <Complex path="app:grense">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
+    <Primitive path="app:høyde" mapping="høyde" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Innsjø" table="innsjø">
     <FIDMapping prefix="app.Innsjø_">
@@ -289,16 +289,16 @@
     <Primitive path="app:registreringsversjon" mapping="registreringsversjon" />
     <Primitive path="app:informasjon" mapping="informasjon" />
     <Primitive path="app:sluttdato" mapping="sluttdato" />
-    <Primitive path="app:høyde" mapping="høyde" />
-    <Primitive path="app:medium" mapping="medium" />
-    <Primitive path="app:regulert" mapping="regulert" />
-    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:område">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Complex path="app:posisjon">
       <Geometry path="." mapping="reppunkt_spa" />
     </Complex>
+    <Primitive path="app:høyde" mapping="høyde" />
+    <Primitive path="app:medium" mapping="medium" />
+    <Primitive path="app:regulert" mapping="regulert" />
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:ElvBekk" table="elvbekk">
     <FIDMapping prefix="app.ElvBekk_">
@@ -326,11 +326,11 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:vannBredde" mapping="vannbr" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:senterlinje">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:vannBredde" mapping="vannbr" />
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:KanalGrøft" table="kanalgrøft">
     <FIDMapping prefix="app.KanalGrøft_">
@@ -358,11 +358,11 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:vannBredde" mapping="vannbr" />
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:senterlinje">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:vannBredde" mapping="vannbr" />
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:VeggrøftÅpen" table="veggrøftåpen">
     <FIDMapping prefix="app.VeggrøftÅpen_">
@@ -535,9 +535,9 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:medium" mapping="medium" />
     <Complex path="app:senterlinje">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
   </FeatureTypeMapping>
 </SQLFeatureStore>

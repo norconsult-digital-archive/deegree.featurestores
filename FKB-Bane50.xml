@@ -29,11 +29,11 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
-    <Primitive path="app:medium" mapping="medium" />
-    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Complex path="app:grense">
       <Geometry path="." mapping="geometri_spa" />
     </Complex>
+    <Primitive path="app:medium" mapping="medium" />
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Spormidt" table="spormidt">
     <FIDMapping prefix="app.Spormidt_">
@@ -61,12 +61,12 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Complex path="app:senterlinje">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:jernbanetype" mapping="jernbanetype" />
     <Primitive path="app:høydereferanse" mapping="href" />
     <Primitive path="app:medium" mapping="medium" />
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri_spa" />
-    </Complex>
   </FeatureTypeMapping>
 </SQLFeatureStore>

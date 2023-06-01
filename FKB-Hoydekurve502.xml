@@ -30,15 +30,15 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Complex path="app:senterlinje">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:høyde" mapping="høyde" />
     <Complex path="app:opphav">
       <Complex path="app:Opphav">
         <Primitive path="app:sikkerTerrenggjengivelse" mapping="sikkerterrenggjengivelse" />
         <Primitive path="app:datakilde" mapping="datakilde" />
       </Complex>
-    </Complex>
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Forsenkningskurve" table="forsenkningskurve">
@@ -68,15 +68,15 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Complex path="app:senterlinje">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:høyde" mapping="høyde" />
     <Complex path="app:opphav">
       <Complex path="app:Opphav">
         <Primitive path="app:sikkerTerrenggjengivelse" mapping="sikkerterrenggjengivelse" />
         <Primitive path="app:datakilde" mapping="datakilde" />
       </Complex>
-    </Complex>
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Toppunkt" table="toppunkt">
@@ -106,15 +106,15 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Complex path="app:posisjon">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:høyde" mapping="høyde" />
     <Complex path="app:opphav">
       <Complex path="app:Opphav">
         <Primitive path="app:sikkerTerrenggjengivelse" mapping="sikkerterrenggjengivelse" />
         <Primitive path="app:datakilde" mapping="datakilde" />
       </Complex>
-    </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Forsenkningspunkt" table="forsenkningspunkt">
@@ -144,15 +144,15 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Complex path="app:posisjon">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:høyde" mapping="høyde" />
     <Complex path="app:opphav">
       <Complex path="app:Opphav">
         <Primitive path="app:sikkerTerrenggjengivelse" mapping="sikkerterrenggjengivelse" />
         <Primitive path="app:datakilde" mapping="datakilde" />
       </Complex>
-    </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Terrenglinje" table="terrenglinje">
@@ -182,14 +182,14 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Complex path="app:senterlinje">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Complex path="app:opphav">
       <Complex path="app:Opphav">
         <Primitive path="app:sikkerTerrenggjengivelse" mapping="sikkerterrenggjengivelse" />
         <Primitive path="app:datakilde" mapping="datakilde" />
       </Complex>
-    </Complex>
-    <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Terrengpunkt" table="terrengpunkt">
@@ -219,15 +219,15 @@
         <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
       </Complex>
     </Complex>
+    <Complex path="app:posisjon">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
     <Primitive path="app:høyde" mapping="høyde" />
     <Complex path="app:opphav">
       <Complex path="app:Opphav">
         <Primitive path="app:sikkerTerrenggjengivelse" mapping="sikkerterrenggjengivelse" />
         <Primitive path="app:datakilde" mapping="datakilde" />
       </Complex>
-    </Complex>
-    <Complex path="app:posisjon">
-      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
 </SQLFeatureStore>
