@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SQLFeatureStore xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:app="https://skjema.geonorge.no/SOSI/produktspesifikasjon/Gravplass/20230101" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.deegree.org/datasource/feature/sql http://schemas.deegree.org/datasource/feature/sql/3.1.0/sql.xsd" configVersion="3.1.0" xmlns="http://www.deegree.org/datasource/feature/sql">
+  <JDBCConnId>sql</JDBCConnId>
+  <StorageCRS srid="5972" dim="3D">EPSG:5972</StorageCRS>
+  <GMLSchema>https://skjema.geonorge.no/SOSI/produktspesifikasjon/Gravplass/20230101/Gravplass.xsd</GMLSchema>
+  <FeatureTypeMapping name="app:Grav" table="grav">
+    <FIDMapping prefix="app.Grav_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:målemetode" mapping="målemetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+      </Complex>
+    </Complex>
+    <Complex path="app:område">
+      <Geometry path="." mapping="geometri" />
+    </Complex>
+    <Complex path="app:posisjon">
+      <Geometry path="." mapping="reppunkt_spa" />
+    </Complex>
+    <Complex path="app:gravId">
+      <Complex path="app:GravId">
+        <Primitive path="app:rad" mapping="rad" />
+        <Primitive path="app:kolonne" mapping="kolonne" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:gravfeltsId" mapping="gravfeltsid" />
+    <Primitive path="app:gravtype" mapping="gravtype" />
+    <Primitive path="app:gravstørrelse" mapping="gravstørrelse" />
+    <Complex path="app:tilrettelegging">
+      <Complex path="app:Tilrettelegging">
+        <Primitive path="app:tilrettelagt" mapping="tilrettelagt" />
+        <Primitive path="app:merknad" mapping="merknad" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:fredet" mapping="fredet" />
+    <Primitive path="app:gravdybde" mapping="gravdybde" />
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:Gravfelt" table="gravfelt">
+    <FIDMapping prefix="app.Gravfelt_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:målemetode" mapping="målemetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+      </Complex>
+    </Complex>
+    <Complex path="app:område">
+      <Geometry path="." mapping="geometri" />
+    </Complex>
+    <Primitive path="app:gravplassId" mapping="gravplassid" />
+    <Primitive path="app:gravfeltsId" mapping="gravfeltsid" />
+    <Primitive path="app:gravfelttype" mapping="gravfelttype" />
+    <Complex path="app:tilrettelegging">
+      <Complex path="app:Tilrettelegging">
+        <Primitive path="app:tilrettelagt" mapping="tilrettelagt" />
+        <Primitive path="app:merknad" mapping="merknad" />
+      </Complex>
+    </Complex>
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:GravfeltFastmerke" table="gravfeltfastmerke">
+    <FIDMapping prefix="app.GravfeltFastmerke_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:målemetode" mapping="målemetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+      </Complex>
+    </Complex>
+    <Complex path="app:posisjon">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
+    <Primitive path="app:fastmerkeId" mapping="fastmerkeid" />
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:Gravfeltskant" table="gravfeltskant">
+    <FIDMapping prefix="app.Gravfeltskant_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:grense">
+      <Geometry path="." mapping="geometri" />
+    </Complex>
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:Gravkant" table="gravkant">
+    <FIDMapping prefix="app.Gravkant_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:grense">
+      <Geometry path="." mapping="geometri" />
+    </Complex>
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:Gravplass" table="gravplass">
+    <FIDMapping prefix="app.Gravplass_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:målemetode" mapping="målemetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+      </Complex>
+    </Complex>
+    <Complex path="app:område">
+      <Geometry path="." mapping="geometri" />
+    </Complex>
+    <Primitive path="app:gravplassId" mapping="gravplassid" />
+    <Primitive path="app:gravplassUUID" mapping="gravplassuuid" />
+    <Primitive path="app:gravplassNavnNorsk" mapping="gravplass_navn_norsk" />
+    <Primitive path="app:etableringsdato" mapping="etableringsdato" />
+    <Primitive path="app:gravplassNavnSamisk" mapping="gravplass_navn" />
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:Gravplasskant" table="gravplasskant">
+    <FIDMapping prefix="app.Gravplasskant_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:grense">
+      <Geometry path="." mapping="geometri" />
+    </Complex>
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:Urneplass" table="urneplass">
+    <FIDMapping prefix="app.Urneplass_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:målemetode" mapping="målemetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+      </Complex>
+    </Complex>
+    <Complex path="app:posisjon">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
+    <Primitive path="app:urneplassId" mapping="urneplassid" />
+    <Primitive path="app:fkGrav" mapping="fkgravid" />
+  </FeatureTypeMapping>
+</SQLFeatureStore>
