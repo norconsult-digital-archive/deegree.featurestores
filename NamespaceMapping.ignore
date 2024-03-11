@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurations>
+	<baseUrl>https://raw.githubusercontent.com/Norconsult/deegree.featurestores/gravplass20230101/</baseUrl>
+	<configuration namespace="https://skjema.geonorge.no/SOSI/produktspesifikasjon/Gravplass/20230101">gravplass20230101.xml</configuration>
+</configurations>
