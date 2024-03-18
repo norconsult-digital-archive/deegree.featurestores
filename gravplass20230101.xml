@@ -96,22 +96,6 @@
     </Complex>
     <Primitive path="app:fastmerkeId" mapping="fastmerkeid" />
   </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Gravfeltskant" table="gravfeltskant">
-    <FIDMapping prefix="app.Gravfeltskant_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
-    </Complex>
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Gravkant" table="gravkant">
-    <FIDMapping prefix="app.Gravkant_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
-    </Complex>
-  </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Gravplass" table="gravplass">
     <FIDMapping prefix="app.Gravplass_">
       <Column name="lokalid" type="string" />
@@ -137,14 +121,6 @@
     <Primitive path="app:gravplassNavnNorsk" mapping="gravplass_navn_norsk" />
     <Primitive path="app:etableringsdato" mapping="etableringsdato" />
     <Primitive path="app:gravplassNavnSamisk" mapping="gravplass_navn" />
-  </FeatureTypeMapping>
-  <FeatureTypeMapping name="app:Gravplasskant" table="gravplasskant">
-    <FIDMapping prefix="app.Gravplasskant_">
-      <Column name="lokalid" type="string" />
-    </FIDMapping>
-    <Complex path="app:grense">
-      <Geometry path="." mapping="geometri" />
-    </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Urneplass" table="urneplass">
     <FIDMapping prefix="app.Urneplass_">
