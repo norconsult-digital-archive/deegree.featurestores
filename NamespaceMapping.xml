@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurations>
+	<baseUrl>https://raw.githubusercontent.com/Norconsult/deegree.featurestores/FKB51/</baseUrl>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-AR5/5.1">FKB-AR5_51.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.1">FKB-ArealBruk51.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bane/5.1">FKB-Bane51.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.1">FKB-BygnAnlegg51.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.1">FKB-Bygning51.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Hoydekurve/5.1">FKB-Hoydekurve51.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.1">FKB-Ledning51.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.1">FKB-Lufthavn51.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.1">FKB-Naturinfo51.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Tiltak/5.1">FKB-Tiltak51.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-TraktorvegSti/5.1">FKB-TraktorvegSti51.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.1">FKB-Veg51.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.1">FKB-Vann51.xml</configuration>
+</configurations>

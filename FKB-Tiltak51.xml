@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SQLFeatureStore xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:app="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Tiltak/5.1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.deegree.org/datasource/feature/sql http://schemas.deegree.org/datasource/feature/sql/3.1.0/sql.xsd" configVersion="3.1.0" xmlns="http://www.deegree.org/datasource/feature/sql">
+  <JDBCConnId>sql</JDBCConnId>
+  <StorageCRS srid="5972" dim="3D">EPSG:5972</StorageCRS>
+  <GMLSchema>https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Tiltak/5.1/FKBTiltakGeosynk.xsd</GMLSchema>
+  <FeatureTypeMapping name="app:BygningTiltak" table="bygningtiltak">
+    <FIDMapping prefix="app.BygningTiltak_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Primitive path="app:medium" mapping="medium" />
+    <Complex path="app:område">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
+    <Complex path="app:posisjon">
+      <Geometry path="." mapping="reppunkt_spa" />
+    </Complex>
+    <Primitive path="app:saksreferanse" mapping="saksreferanse" />
+    <Primitive path="app:behandlingsstatus" mapping="behandlingsstatus" />
+    <Primitive path="app:kartregistrering" mapping="kartreg" />
+    <Primitive path="app:behandlingsdato" mapping="behandlingsdato" />
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
+    <Primitive path="app:bygningsnummer" mapping="byggnr" />
+    <Primitive path="app:bygningsendringløpenummer" mapping="bygn_endr_løpenr" />
+    <Primitive path="app:høydereferanse" mapping="href" />
+    <Primitive path="app:lavestegulv" mapping="lavestegulv" />
+    <Primitive path="app:høydeoverbakken" mapping="hob" />
+    <Primitive path="app:tiltakstypeBygning" mapping="tiltakstypebygning" />
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:SamferdselTiltak" table="samferdseltiltak">
+    <FIDMapping prefix="app.SamferdselTiltak_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Primitive path="app:medium" mapping="medium" />
+    <Complex path="app:område">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
+    <Complex path="app:posisjon">
+      <Geometry path="." mapping="reppunkt_spa" />
+    </Complex>
+    <Primitive path="app:saksreferanse" mapping="saksreferanse" />
+    <Primitive path="app:behandlingsstatus" mapping="behandlingsstatus" />
+    <Primitive path="app:kartregistrering" mapping="kartreg" />
+    <Primitive path="app:behandlingsdato" mapping="behandlingsdato" />
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
+    <Primitive path="app:tiltaksansvarlig" mapping="tiltaksansvarlig" />
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:AndreTiltak" table="andretiltak">
+    <FIDMapping prefix="app.AndreTiltak_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Primitive path="app:medium" mapping="medium" />
+    <Complex path="app:område">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
+    <Complex path="app:posisjon">
+      <Geometry path="." mapping="reppunkt_spa" />
+    </Complex>
+    <Primitive path="app:saksreferanse" mapping="saksreferanse" />
+    <Primitive path="app:behandlingsstatus" mapping="behandlingsstatus" />
+    <Primitive path="app:kartregistrering" mapping="kartreg" />
+    <Primitive path="app:behandlingsdato" mapping="behandlingsdato" />
+    <Primitive path="app:eksternpeker" mapping="eksternpeker" />
+    <Primitive path="app:tiltaksansvarlig" mapping="tiltaksansvarlig" />
+    <Primitive path="app:andretiltak" mapping="tiltaktypeandre" />
+  </FeatureTypeMapping>
+  <FeatureTypeMapping name="app:BygningKnekklinje" table="bygningknekklinje">
+    <FIDMapping prefix="app.BygningKnekklinje_">
+      <Column name="lokalid" type="string" />
+    </FIDMapping>
+    <Complex path="app:identifikasjon">
+      <Complex path="app:Identifikasjon">
+        <Primitive path="app:lokalId" mapping="lokalid" />
+        <Primitive path="app:navnerom" mapping="navnerom" />
+        <Primitive path="app:versjonId" mapping="versjonid" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
+    <Primitive path="app:sluttdato" mapping="sluttdato" />
+    <Primitive path="app:datafangstdato" mapping="datafangstdato" />
+    <Complex path="app:kvalitet">
+      <Complex path="app:Posisjonskvalitet">
+        <Primitive path="app:datafangstmetode" mapping="datafangstmetode" />
+        <Primitive path="app:nøyaktighet" mapping="nøyaktighet" />
+        <Primitive path="app:synbarhet" mapping="synbarhet" />
+        <Primitive path="app:datafangstmetodeHøyde" mapping="datafangstmetodehøyde" />
+        <Primitive path="app:nøyaktighetHøyde" mapping="h_nøyaktighet" />
+      </Complex>
+    </Complex>
+    <Primitive path="app:informasjon" mapping="informasjon" />
+    <Primitive path="app:medium" mapping="medium" />
+    <Complex path="app:grense">
+      <Geometry path="." mapping="geometri_spa" />
+    </Complex>
+    <Primitive path="app:kartregistrering" mapping="kartreg" />
+    <Primitive path="app:knekklinjetype" mapping="knekklinjetype" />
+  </FeatureTypeMapping>
+</SQLFeatureStore>
