@@ -84,31 +84,6 @@
     <Primitive path="app:eksternpeker" mapping="eksternpeker" />
     <Primitive path="app:tiltaksansvarlig" mapping="tiltaksansvarlig" />
     <Primitive path="app:ferdigstiltDato" mapping="ferdigstiltdato" />
-<element name="tiltaksansvarlig" type="gml:CodeType">
-<annotation>
-<documentation>
-hvilket forvaltningsnivå/etat som er ansvarlig for oppfølging av tiltaket
-</documentation>
-<appinfo>
-<sc:targetCodeListURI>
-https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/tiltaksansvarlig
-</sc:targetCodeListURI>
-<defaultCodeSpace>
-https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/tiltaksansvarlig
-</defaultCodeSpace>
-<sc:taggedValue tag="SOSI_navn">TILTAKSANSVARLIG</sc:taggedValue>
-</appinfo>
-</annotation>
-</element>
-<element minOccurs="0" name="ferdigstiltDato" type="date">
-<annotation>
-<documentation>
-Dato for når veganlegget er ferdigstilt. Fylles inn eller overføres fra NVDB.
-</documentation>
-<appinfo>
-<sc:taggedValue tag="SOSI_navn">FERDIGSTILTDATO</sc:taggedValue>
-</appinfo>
-</annotation>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:AndreTiltak" table="andretiltak">
     <FIDMapping prefix="app.AndreTiltak_">
