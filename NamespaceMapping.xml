@@ -14,5 +14,5 @@
 	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-TraktorvegSti/5.1">FKB-TraktorvegSti51.xml</configuration>
 	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.1">FKB-Veg51.xml</configuration>
 	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.1">FKB-Vann51.xml</configuration>
-	<configuration namespace="https://skjema.geonorge.no/SOSI/produktspesifikasjon/NVDBVegnettPluss/1.1">NVDB-VegnettPluss.xml</configuration>
+	<configuration namespace="https://skjema.geonorge.no/SOSI/produktspesifikasjon/NVDBVegnettPluss/1.1">NVDB-VegnettPluss11.xml</configuration>
 </configurations>
