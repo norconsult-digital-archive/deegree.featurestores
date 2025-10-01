@@ -77,7 +77,7 @@
     </Complex>
     <Primitive path="app:feltoversikt" mapping="feltoversikt" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Beredskapsveg" table="beredskapsveg">
@@ -95,7 +95,7 @@
     <Primitive path="app:nvdbId" mapping="nvdbid" />
     <Primitive path="app:bruksområde" mapping="bruksområdeberedskapsveg" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Fartsgrense" table="fartsgrense">
@@ -117,7 +117,7 @@
     <Primitive path="app:gyldigFraDato" mapping="gyldigfradato" />
     <Primitive path="app:arkivnummer" mapping="arkivnummer" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:FartsgrenseVariabel" table="fartsgrensevariabel">
@@ -146,7 +146,7 @@
     <Primitive path="app:arkivnummer" mapping="arkivnummer" />
     <Primitive path="app:prosjektreferanse" mapping="prosjektreferanse" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Ferjesamband" table="ferjesamband">
@@ -171,7 +171,7 @@
     <Primitive path="app:driftFraDato" mapping="driftfradato" />
     <Primitive path="app:driftTilDato" mapping="drifttildato" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:FunksjonellVegklasse" table="funksjonellvegklasse">
@@ -190,7 +190,7 @@
     <Primitive path="app:vegklasse" mapping="vegklasse" />
     <Primitive path="app:merknad" mapping="merknad" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Gågatereguleringer" table="gågatereguleringer">
@@ -218,7 +218,7 @@
     <Primitive path="app:arkivnummer" mapping="arkivnummer" />
     <Primitive path="app:gyldigFraDato" mapping="gyldigfradato" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:GjennomkjøringForbudt" table="gjennomkjøringforbudt">
@@ -303,7 +303,7 @@
     <Primitive path="app:måledato" mapping="måledato" />
     <Primitive path="app:prosjektreferanse" mapping="prosjektreferanse" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Jernbanekryssing" table="jernbanekryssing">
@@ -341,7 +341,7 @@
     <Primitive path="app:nvdbId" mapping="nvdbid" />
     <Primitive path="app:klasseLandbruksveg" mapping="klasselandbruksveg" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Motorveg" table="motorveg">
@@ -362,7 +362,7 @@
     <Primitive path="app:gyldigFraDato" mapping="gyldigfradato" />
     <Primitive path="app:arkivnummer" mapping="arkivnummer" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Serviceveg" table="serviceveg">
@@ -379,7 +379,7 @@
     <Primitive path="app:oppdateringsdato" mapping="oppdateringsdato" />
     <Primitive path="app:nvdbId" mapping="nvdbid" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Svingerestriksjon" table="svingerestriksjon">
@@ -407,7 +407,7 @@
     <Primitive path="app:arkivnummer" mapping="arkivnummer" />
     <Primitive path="app:gyldigFraDato" mapping="gyldigfradato" />
     <Complex path="app:posisjon">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:TillattKjøreretning" table="tillattkjøreretning">
@@ -427,7 +427,7 @@
     <Primitive path="app:vedtaksnummer" mapping="vedtaksnummer" />
     <Primitive path="app:arkivnummer" mapping="arkivnummer" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
     <Primitive path="app:gyldigFraDato" mapping="gyldigfradato" />
   </FeatureTypeMapping>
@@ -457,7 +457,7 @@
     <Primitive path="app:arkivnummer" mapping="arkivnummer" />
     <Primitive path="app:gyldigFraDato" mapping="gyldigfradato" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:VærutsattVeg" table="værutsattveg">
@@ -492,7 +492,7 @@
     <Primitive path="app:avgrensaVinterdriftTilDato" mapping="avgrensavinterdrifttildato" />
     <Primitive path="app:tilleggsinformasjon" mapping="tilleggsinformasjon" />
     <Complex path="app:senterlinje">
-      <Geometry path="." mapping="geometri" />
+      <Geometry path="." mapping="geometri_spa" />
     </Complex>
   </FeatureTypeMapping>
   <FeatureTypeMapping name="app:Vegsperring" table="vegsperring">
