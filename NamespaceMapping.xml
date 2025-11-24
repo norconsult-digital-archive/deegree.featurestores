@@ -8,7 +8,7 @@
 	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.1">FKB-Bygning51.xml</configuration>
 	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Hoydekurve/5.0">FKB-Hoydekurve502.xml</configuration>
 	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.1">FKB-Ledning51.xml</configuration>
-	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0">FKB-Lufthavn50.xml</configuration>
+	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0">FKB-Lufthavn501.xml</configuration>
 	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0">FKB-Naturinfo50.xml</configuration>
 	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Tiltak/5.1">FKB-Tiltak51.xml</configuration>
 	<configuration namespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-TraktorvegSti/5.1">FKB-TraktorvegSti51.xml</configuration>
